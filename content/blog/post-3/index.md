@@ -4,7 +4,7 @@ date: "2022-08-22"
 description: Golfer Iyene Essien recently came in second place at the Champion of Champions World Championship in Northern Ireland..
 ---
 
-![Golfer Iyene Essien](./content\blog\post-3\220805153232-iyene-essien.jpg, "Nigerian golfer")
+![Golfer Iyene Essien](./220805153232-iyene-essien.jpg, "Nigerian golfer")
 
 (CNN) - A single moment can change the trajectory of our lives. For Nigerian Iyeneobong “Iyene” Essien, that moment came when she was just five years old. She remembers the day her dad took her to a golf course in Abuja, where she saw a boy teeing off. Intrigued by the sight, she asked her dad if she could pursue the sport.
 
