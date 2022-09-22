@@ -36,13 +36,13 @@ const Seo = ({ description, lang, title, children }) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
-      <meta name="twitter:card" content="summary" />
+      <meta name="GitHub:card" content="summary" />
       <meta
-        name="twitter:creator"
-        content={site.siteMetadata?.social?.twitter || ``}
+        name="GitHub:creator"
+        content={site.siteMetadata?.social?.GitHub || ``}
       />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={metaDescription} />
+      <meta name="GitHub:title" content={title} />
+      <meta name="GitHub:description" content={metaDescription} />
       {children}
     </>
   )

@@ -8,15 +8,14 @@ import Seo from "../components/seo"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+  const totalCount = data.allMarkdownRemark.totalCount
 
-  if (posts.length === 0) {
+  if (totalCount.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
+          No blog posts found. 
         </p>
       </Layout>
     )
@@ -25,6 +24,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Bio />
+      <small>{totalCount} blogs available</small>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -42,7 +42,7 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>{post.frontmatter.date}, {post.timeToRead} minutes read</small>
                 </header>
                 <section>
                   <p
@@ -79,6 +79,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
+        timeToRead
         excerpt
         fields {
           slug
@@ -89,6 +90,7 @@ export const pageQuery = graphql`
           description
         }
       }
+      totalCount
     }
   }
 `
